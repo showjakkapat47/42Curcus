@@ -1,0 +1,11 @@
+cd ~/projects/libft
+make fclean
+rm -f libft.a libft.so
+make
+make so
+cd ../libft-unit-tests/
+make fclean                  
+rm -f assets/libft.a          
+make -C ../libft fclean && make -C ../libft && make -C ../libft so
+make                          
+./run_test
