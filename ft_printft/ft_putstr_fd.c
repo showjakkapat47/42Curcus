@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftprintf.h                                      :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaruengb <jaruengb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/19 11:34:49 by shhowjakkap       #+#    #+#             */
-/*   Updated: 2025/09/19 13:56:49 by jaruengb         ###   ########.fr       */
+/*   Created: 2025/09/02 20:21:19 by jaruengb          #+#    #+#             */
+/*   Updated: 2025/09/19 13:41:24 by jaruengb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFTPRINTF_H
-# define LIBFTPRINTF_H
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdarg.h>
+#include <unistd.h>
 
-void	ft_putstr_fd(char *c, int fd);
-void	ft_putchar_fd(char c, int fd);
-int		printchar(char c);
-int		ft_printf(const char *format, ...);
-int		check_percent(char c, va_list arg);
-int		printstr(char *str);
-#endif
+void	ft_putstr_fd(char *c, int fd)
+{
+	int	i;
+
+	i = 0;
+	if (!c)
+		return ;
+	while (c[i] != 0)
+	{
+		write(fd, &(c[i]), 1);
+		i++;
+	}
+}
+//int	main(void)
+//{
+//	ft_putstr_fd("jndsjdls\n", 1);
+//	ft_putstr_fd("Hello My World\n", 1);
+//	ft_putstr_fd("O\n", 1);
+//}

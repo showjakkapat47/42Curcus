@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftprintf.h                                      :+:      :+:    :+:   */
+/*   printstr.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaruengb <jaruengb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/19 11:34:49 by shhowjakkap       #+#    #+#             */
-/*   Updated: 2025/09/19 13:56:49 by jaruengb         ###   ########.fr       */
+/*   Created: 2025/09/19 13:53:05 by jaruengb          #+#    #+#             */
+/*   Updated: 2025/09/19 13:59:45 by jaruengb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFTPRINTF_H
-# define LIBFTPRINTF_H
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdarg.h>
+#include "libftprintf.h"
 
-void	ft_putstr_fd(char *c, int fd);
-void	ft_putchar_fd(char c, int fd);
-int		printchar(char c);
-int		ft_printf(const char *format, ...);
-int		check_percent(char c, va_list arg);
-int		printstr(char *str);
-#endif
+int	printstr(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		ft_putchar_fd(str[i], 1);
+		i++;
+	}
+	return (i);
+}

@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftprintf.h                                      :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaruengb <jaruengb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/19 11:34:49 by shhowjakkap       #+#    #+#             */
-/*   Updated: 2025/09/19 13:56:49 by jaruengb         ###   ########.fr       */
+/*   Created: 2025/09/02 20:17:22 by jaruengb          #+#    #+#             */
+/*   Updated: 2025/09/19 13:41:22 by jaruengb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFTPRINTF_H
-# define LIBFTPRINTF_H
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdarg.h>
+#include <unistd.h>
 
-void	ft_putstr_fd(char *c, int fd);
-void	ft_putchar_fd(char c, int fd);
-int		printchar(char c);
-int		ft_printf(const char *format, ...);
-int		check_percent(char c, va_list arg);
-int		printstr(char *str);
-#endif
+void	ft_putchar_fd(char c, int fd)
+{
+	write(fd, &c, 1);
+}
+//int	main(void)
+//{
+//	ft_putchar_fd('8', 1);
+//	ft_putchar_fd('O', 1);
+//	ft_putchar_fd('p', 1);
+//}
