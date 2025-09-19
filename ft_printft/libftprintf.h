@@ -1,37 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   libftprintf.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaruengb <jaruengb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/17 21:11:49 by shhowjakkap       #+#    #+#             */
-/*   Updated: 2025/09/19 12:12:30 by jaruengb         ###   ########.fr       */
+/*   Created: 2025/09/19 11:34:49 by shhowjakkap       #+#    #+#             */
+/*   Updated: 2025/09/19 11:43:02 by jaruengb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#ifndef LIBFTPRINTF_H
+# define LIBFTPRINTF_H
+# include <unistd.h>
+# include <stdlib.h>
+# include <stdarg.h>
 
-int	ft_printf(const char *format, ...)
-{
-	va_list arg;
-	int		i;
-
-	va_start(arg, format);
-	i = 0;
-	while (*format)
-	{
-		if (*format == '%')
-		{
-			format++;
-			i += 
-		}
-		else
-		{
-			write(1, *format, 1);
-			i++;
-		}
-		*format++;
-	}
-	
-}
+#endif
